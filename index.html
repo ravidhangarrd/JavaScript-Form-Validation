@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js"></script>
+</head>
+<body onload="timeClock(), formfillTime()">
+    <div class="main-container">
+        <div class="left-container">
+            <div id="digital-clock-container">
+                <h1 id="digital-clock">00:00:00</h1>
+            </div>
+            <div id="good-respact-container">
+                <h1 id="good-respact">Good Morning</h1>
+            </div>
+            <div id="img-container">
+                <div id="img-container-insider">
+                </div>
+            </div>
+        </div>
+        <div class="right-container">
+            <div class="timmer-text-container">
+                <h1 id="header-text">Create an account</h1>
+                <h1 id="timmer-text">05:00</h1>
+            </div>
+            <div class="form-container">
+                <form action="successed.html" onsubmit="return successed()">
+                    <div class="fullname-container">
+                        <div class="fullname-text">Full Name</div>
+                        <div class="fullname-value-container">
+                            <input id="fullname-value" type="text" placeholder="Full Name" onkeyup="changeTextToUpper(), btnEnable()">
+                        </div>
+                    </div>
+
+                    <div class="email-container">
+                        <div class="email-text">Email Address</div>
+                        <div class="email-value-container">
+                            <input id="email-value" type="email" placeholder="example@gmail.com" onkeyup="btnEnable()">
+                        </div>
+                    </div>
+
+                    <div class="password-container">
+                        <div class="password-text">
+                            Password
+                        </div>
+                        <div class="password-value-container">
+                            <div class="password-box">
+                                <div class="password-value-box">
+                                    <input id="password-value" type="password" placeholder="Password (Min 8 char)" onkeyup="validPassword(), btnEnable()">
+                                </div>
+                                <div class="password-icon-box">
+                                    <img id="pass-valid-icon" src="./img/red-img.png" alt="" width="16px" height="16px">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="phoneno-container">
+                        <div class="phoneno-text">Phone no</div>
+                        <div class="phoneno-inside-container">
+                            <div class="phoneno-code-container">
+                                <input type="text" value="+91" id="phoneno-code-value" placeholder="+91" readonly>
+                            </div>
+                            <div class="phoneno-value-container">
+                                <input type="text" name="" id="phoneno-value" placeholder="xxxxxxxxxx" onkeyup="validPhone(), btnEnable()">
+                            </div>
+                            <div class="phone-icon-container">
+                                <img id="phone-valid-icon" src="./img/red-img.png" alt="" height="16px" width="16px">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gender-container">
+                        <div class="gender-text">
+                            Gender
+                        </div>
+                        <div class="gender-value-container">
+                            <span>
+                                <input id="male-gender" type="radio" value="m" name="gender">Male
+                            </span>
+                            <span>
+                                <input id="female-gender" type="radio" value="f" name="gender">Female
+                            </span>
+                            <span>
+                                <input id="non-binary-gender" type="radio" value="n" name="gender">Non binary
+                            </span>
+                        </div>                 
+                    </div>
+
+                    <div class="country-container">
+                        <div class="country-text">
+                            Country
+                        </div>
+                        <div class="country-value-container">
+                            <select id="country-value" onchange="selectCountry(), btnEnable()">
+                                <option value="91" selected>India</option>
+                                <option value="01" >USA</option>
+                                <option value="86">China</option>
+                                <option value="81">Japan</option>
+                            </select> 
+                        </div>
+                    </div>
+
+                    <div class="image-container">
+                        <div class="image-text">
+                            Select Image
+                        </div>
+                        <div class="image-value-container">
+                            <input id="image-value" type="file" onclick="imgSelect(), btnEnable()">
+                        </div>
+                    </div>
+
+                    <div class="agree-container">
+                        <input id="agree-value" type="checkbox" onclick="btnEnable()">
+                        <span class="agree-text">I Agree All Statements In Terms Of Service</span>
+                    </div>
+
+                    <div class="btn-container">
+                        <input id="ca-btn" type="submit" value="Create an account" disabled>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
